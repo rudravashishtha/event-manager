@@ -45,6 +45,17 @@ export const formatDateTime = (dateString: Date) => {
   }
 }
 
+export const calculateTimeDifferenceInHours = (startDateTime: Date, endDateTime: Date) => {
+  const start = startDateTime.getTime();
+  const end = endDateTime.getTime();
+  
+  const timeDifferenceInMilliseconds = end - start;
+  const timeDifferenceInHours = Math.round(timeDifferenceInMilliseconds / (1000 * 60 * 60));
+
+  return timeDifferenceInHours;
+};
+
+
 export const convertFileToUrl = (file: File) => URL.createObjectURL(file)
 
 export const formatPrice = (price: string) => {
